@@ -1,0 +1,11 @@
+one:
+  restaurant: one
+  name: Quentinha Básica I
+  description: A mais pedida do bairro
+  price: <%= ::Money.new(1599, "BRL") %>
+
+two:
+  restaurant: two
+  name: Quentinha Básica II
+  description: Essa é a nossa mais saborosa
+  price: <%= ::Money.new(2199, "BRL") %>

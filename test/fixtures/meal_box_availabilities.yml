@@ -1,0 +1,35 @@
+one:
+  meal_box: one
+  day_of_week: 0
+
+two:
+  meal_box: one
+  day_of_week: 1
+
+three:
+  meal_box: one
+  day_of_week: 2
+
+four:
+  meal_box: one
+  day_of_week: 3
+
+five:
+  meal_box: one
+  day_of_week: 4
+
+six:
+  meal_box: one
+  day_of_week: 5
+
+seven:
+  meal_box: one
+  day_of_week: 6
+
+eight:
+  meal_box: two
+  day_of_week: 2
+
+nine:
+  meal_box: two
+  day_of_week: 4

@@ -1,0 +1,23 @@
+one:
+  meal_box: one
+  ingredient: one
+
+two:
+  meal_box: one
+  ingredient: two
+
+third:
+  meal_box: one
+  ingredient: third
+
+fourth:
+  meal_box: two
+  ingredient: one
+
+fifth:
+  meal_box: two
+  ingredient: two
+
+sixth:
+  meal_box: two
+  ingredient: fourth
