@@ -2,10 +2,12 @@ one:
   restaurant: one
   name: Quentinha Básica I
   description: A mais pedida do bairro
-  price: <%= ::Money.new(1599, "BRL") %>
+  price_cents: 1599
+  price_currency: BRL
 
 two:
-  restaurant: two
+  restaurant: one
   name: Quentinha Básica II
   description: Essa é a nossa mais saborosa
-  price: <%= ::Money.new(2199, "BRL") %>
+  price_cents: 2199
+  price_currency: BRL
