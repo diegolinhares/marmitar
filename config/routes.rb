@@ -5,6 +5,7 @@
 
       resources :restaurants, only: [] do
         resources :orders, only: [ :create ], module: "restaurants"
+        resources :customers, only: [ :create ], module: "restaurants"
       end
     end
   end
