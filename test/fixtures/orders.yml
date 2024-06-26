@@ -1,0 +1,15 @@
+one:
+  customer: one
+  meal_box: one
+  quantity: 2
+  status: pending
+  price_cents: 3198
+  price_currency: BRL
+
+two:
+  customer: two
+  meal_box: two
+  quantity: 1
+  status: confirmed
+  price_cents: 2199
+  price_currency: BRL

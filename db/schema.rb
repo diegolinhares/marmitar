@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_06_25_221309) do
+ActiveRecord::Schema[7.2].define(version: 2024_06_26_003907) do
+  create_table "customers", force: :cascade do |t|
+    t.integer "restaurant_id", null: false
+    t.string "name", null: false
+    t.string "phone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phone"], name: "index_customers_on_phone", unique: true
+    t.index ["restaurant_id"], name: "index_customers_on_restaurant_id"
+  end
+
   create_table "ingredients", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -47,6 +57,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_25_221309) do
     t.index ["restaurant_id"], name: "index_meal_boxes_on_restaurant_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "meal_box_id", null: false
+    t.integer "quantity", null: false
+    t.string "status", default: "pending", null: false
+    t.integer "total_price_cents", default: 0, null: false
+    t.string "total_price_currency", default: "BRL", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["meal_box_id"], name: "index_orders_on_meal_box_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -65,9 +88,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_25_221309) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "customers", "restaurants"
   add_foreign_key "meal_box_availabilities", "meal_boxes"
   add_foreign_key "meal_box_ingredients", "ingredients"
   add_foreign_key "meal_box_ingredients", "meal_boxes"
   add_foreign_key "meal_boxes", "restaurants"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "meal_boxes"
   add_foreign_key "restaurants", "users"
 end
