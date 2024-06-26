@@ -77,3 +77,33 @@ curl -H "Authorization: Token fD7WoV9ZH4qii8KsvwmNKUbSVfsm79rtjwuxgKuCae" \
      https://localhost:3000/api/v1/menus
 ```
 
+Endpoint de criar um cliente:
+
+```bash
+curl -X POST http://localhost:3000/restaurants/1/customers \
+-H "Content-Type: application/json" \
+-H "Authorization: Token fD7WoV9ZH4qii8KsvwmNKUbSVfsm79rtjwuxgKuCae" \
+-d '{
+  "customer": {
+    "name": "New Customer",
+    "phone": "123456789"
+  }
+}'
+```
+
+Endpoint de criar um pedido:
+
+```bash
+curl -X POST http://localhost:3000/restaurants/1/orders \
+-H "Content-Type: application/json" \
+-H "Authorization: Token fD7WoV9ZH4qii8KsvwmNKUbSVfsm79rtjwuxgKuCae" \
+-d '{
+  "order": {
+    "phone": "123456789",
+    "restaurant_id": 1,
+    "meal_box_id": 1,
+    "quantity": 2
+  }
+}'
+```
+
