@@ -7,15 +7,4 @@ class Customer < ::ApplicationRecord
     validates :name
     validates :phone, uniqueness: true
   end
-
-  enum status: {
-    pending: "pending",
-    confirmed: "confirmed",
-    preparing: "preparing",
-    ready_for_pickup: "ready_for_pickup",
-    out_for_delivery: "out_for_delivery",
-    delivered: "delivered",
-    cancelled: "cancelled",
-    refunded: "refunded"
-  }
 end

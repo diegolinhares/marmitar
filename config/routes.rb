@@ -2,6 +2,10 @@
   namespace :api, format: :json do
     namespace :v1 do
       resources :menus, only: [ :index ]
+
+      resources :restaurants, only: [] do
+        resources :orders, only: [ :create ], module: "restaurants"
+      end
     end
   end
 
